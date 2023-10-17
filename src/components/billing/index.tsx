@@ -1,5 +1,7 @@
+import "./styles.scss";
+
 const Billing = () => {
-  return <div>billing</div>;
+  return <div className="billing">billing</div>;
 };
 
 export default Billing;

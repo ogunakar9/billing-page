@@ -1,0 +1,86 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.content {
+  @include displayFlex(space-between, flex-start, column);
+  height: 879px;
+  box-sizing: border-box;
+  background-color: $white;
+  border-radius: 32px 0 0 32px;
+  padding: 58px 0 29px 38px;
+  flex: 0 1 260px;
+
+  .wrapper {
+    @include displayFlex(flex-start, flex-start, column);
+    gap: 49px;
+  }
+
+  &__user {
+    @include displayFlex(flex-start, center, row);
+    gap: 14px;
+    box-sizing: border-box;
+
+    img {
+      width: 55px;
+      height: 55px;
+      border-radius: 17px;
+    }
+
+    &__item {
+      @include displayFlex(flex-start, flex-start, column);
+      gap: 5px;
+
+      &__title {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      &__username {
+        font-size: 14px;
+        font-weight: 400;
+        color: $text;
+      }
+    }
+  }
+
+  &__menu {
+    @include displayFlex(flex-start, flex-start, column);
+    gap: 8px;
+
+    &__item {
+      @include displayFlex(flex-start, center);
+      gap: 10px;
+      padding: 8px 0;
+      position: relative;
+
+      &__text {
+        color: $text;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__logout {
+    @include displayFlex(flex-start, center);
+    gap: 8px;
+
+    &__text {
+      color: $text;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
+
+.--active {
+  &::before {
+    content: "";
+    position: absolute;
+    height: 44px;
+    width: 6px;
+    background: $red;
+    left: -20px;
+    border-radius: 24px;
+  }
+}

@@ -5,7 +5,8 @@
   $wrap: wrap
 ) {
   display: flex;
-  flex-wrap: $wrap;
   justify-content: $justify;
   align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
 }

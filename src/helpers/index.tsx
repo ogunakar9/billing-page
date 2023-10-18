@@ -4,6 +4,14 @@ const capitalize = (word: String) => {
   return `${firstLetter}${rest}`;
 };
 
+const titleCreator = (data: ITableData[]) => {
+  return Object.keys(data[0])
+    .filter((key) => key !== "id")
+    .map((key) => {
+      return <th key={key}>{capitalize(key)}</th>;
+    });
+};
+
 const rowCreator = (data: ITableData[]) => {
   return data.map((item) => {
     const table = Object.values(item)
@@ -15,6 +23,14 @@ const rowCreator = (data: ITableData[]) => {
     return (
       <tr key={item.id}>
         {table.map((value, index) => {
+          if (index === table.length - 1) {
+            return (
+              <td key={index}>
+                <button>{value}</button>
+              </td>
+            );
+          }
+
           return <td key={index}>{value}</td>;
         })}
       </tr>
@@ -22,7 +38,7 @@ const rowCreator = (data: ITableData[]) => {
   });
 };
 
-export { capitalize, rowCreator };
+export { capitalize, rowCreator, titleCreator };
 
 interface ITableData {
   date: string;

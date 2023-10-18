@@ -41,6 +41,34 @@
         }
       }
     }
+
+    tbody {
+      width: 100%;
+
+      tr {
+        border-radius: 8px;
+
+        &:nth-child(2) {
+          box-shadow: 0px 8px 19px rgba(223.37, 223.37, 252.88, 0.6);
+        }
+
+        td {
+          color: $bold-text;
+          font-size: 16px;
+          font-weight: 500;
+
+          button {
+            @include btnReset;
+            border: 1px solid $purple;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: $bold-text;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
   }
 
   &__load {

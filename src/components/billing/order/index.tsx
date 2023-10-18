@@ -1,6 +1,6 @@
 import "./styles.scss";
 import { card } from "../../../assets";
-import { capitalize, rowCreator } from "../../../helpers";
+import { rowCreator, titleCreator } from "../../../helpers";
 import { tableData } from "../../../utility/";
 
 const OrderSection = () => {
@@ -14,13 +14,7 @@ const OrderSection = () => {
       </div>
       <table className="order__table">
         <thead>
-          <tr>
-            {Object.keys(tableData[0])
-              .filter((key) => key !== "id")
-              .map((key) => {
-                return <th key={key}>{capitalize(key)}</th>;
-              })}
-          </tr>
+          <tr>{titleCreator(tableData)}</tr>
         </thead>
         <tbody>{rowCreator(tableData)}</tbody>
       </table>

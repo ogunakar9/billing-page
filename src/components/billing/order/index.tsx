@@ -1,5 +1,7 @@
 import "./styles.scss";
 import { card } from "../../../assets";
+import { capitalize, rowCreator } from "../../../helpers";
+import { tableData } from "../../../utility/";
 
 const OrderSection = () => {
   return (
@@ -13,17 +15,14 @@ const OrderSection = () => {
       <table className="order__table">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Receipt</th>
+            {Object.keys(tableData[0])
+              .filter((key) => key !== "id")
+              .map((key) => {
+                return <th key={key}>{capitalize(key)}</th>;
+              })}
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>The table body</td>
-            <td>with two columns</td>
-          </tr>
-        </tbody>
+        <tbody>{rowCreator(tableData)}</tbody>
       </table>
       <div className="order__load">
         <button

@@ -27,6 +27,20 @@
 
   &__table {
     margin: 0 0 16px 0;
+    width: 100%;
+
+    thead {
+      width: 100%;
+
+      tr {
+        text-align: left;
+        th {
+          color: $text;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
   }
 
   &__load {

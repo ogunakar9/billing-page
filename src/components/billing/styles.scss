@@ -18,11 +18,6 @@
     @include displayFlex(flex-start, flex-start, row, nowrap);
     width: 100%;
     flex: 1 1 auto;
-  }
-
-  &__order {
-    display: flex;
-    flex: 1 1 auto;
-    background-color: green;
+    gap: 72px;
   }
 }

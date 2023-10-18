@@ -1,4 +1,5 @@
 import SubscriptionSection from "./subscription";
+import OrderSection from "./order";
 import "./styles.scss";
 
 const Billing = () => {
@@ -6,7 +7,7 @@ const Billing = () => {
     <div className="billing">
       <span className="billing__title">Billing</span>
       <div className="billing__sections">
-        <div className="billing__order">order</div>
+        <OrderSection />
         <SubscriptionSection />
       </div>
     </div>

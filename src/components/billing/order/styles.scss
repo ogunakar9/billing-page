@@ -1,0 +1,101 @@
+@import "../../../styles/_mixins";
+@import "../../../styles/_variables";
+
+.order {
+  display: flex;
+  @include displayFlex(flex-start, flex-start, column);
+  flex: 1 1 auto;
+  height: 100%;
+
+  &__history {
+    @include displayFlex(flex-start, flex-start, column);
+    gap: 16px;
+    margin: 0 0 50px 0;
+
+    &__title {
+      color: $bold-text;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      color: $text;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__table {
+    margin: 0 0 16px 0;
+  }
+
+  &__load {
+    margin: 0 0 81px 0;
+
+    &__text {
+      @include btnReset;
+      color: $red;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+
+  &__payment {
+    @include displayFlex(flex-start, flex-start, column);
+    gap: 14px;
+    margin: 0 0 22px 0;
+
+    &__title {
+      color: $bold-text;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      color: $text;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__card {
+    @include displayFlex(space-between, center);
+    width: 100%;
+
+    &__info {
+      @include displayFlex(flex-start, center);
+      gap: 16px;
+
+      &__img {
+        padding: 10px;
+        border: 1px solid $purple;
+        border-radius: 6px;
+        width: 57px;
+        height: 32px;
+
+        img {
+          border-radius: 6px;
+          width: 57px;
+          height: 32px;
+        }
+      }
+
+      &__text {
+        color: $bold-text;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    &__btn {
+      @include btnReset;
+      color: $bold-text;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid $purple;
+    }
+  }
+}
